@@ -1,0 +1,103 @@
+body {
+	margin: 0px;
+}
+
+.item {
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 300px;
+	padding: 20px;
+	margin: 10px;
+	background-color: white;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.buyBtn {
+	background-color: green;
+	padding: 10px;
+	color: white;
+	font-weight: bold;
+	width: 100%;
+}
+
+.item > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	font-weight: bold;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	grid-row: 100px 1fr;
+	grid-template-areas:
+		" header header header totalAmount "
+		" . firstContainer firstContainer secondContainer ";
+}
+
+.firstContainer {
+	grid-area: firstContainer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: lightgray;
+}
+
+.secondContainer {
+	grid-area: secondContainer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	min-height: calc(100vh - 80px);
+}
+.secondContainer > h2 {
+	color: chartreuse;
+}
+.header, .totalAmount {
+	grid-area: header;
+	display: flex;
+	justify-content: center;
+	background-color: navy;
+	color: white;
+}
+
+.totalAmount{
+	grid-area: totalAmount;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.listItems {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+}
+
+.quantity {
+	font-weight: bold;
+	color: red;
+	position: relative;
+	left: 100px;
+}
+
+.deleteBtn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.listItems .description, .cartList .description {
+	height: 100px;
+}
+
